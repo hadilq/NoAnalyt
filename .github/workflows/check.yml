@@ -12,6 +12,6 @@ jobs:
     - name: checkout
       uses: actions/checkout@v5
     - name: set up nixpkgs
-      uses: cachix/install-nix-action@v31
+      uses: DeterminateSystems/nix-installer-action@v20
     - name: Build and check
       run: nix build .#check
