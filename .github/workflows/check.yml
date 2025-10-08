@@ -14,4 +14,4 @@ jobs:
     - name: set up nixpkgs
       uses: DeterminateSystems/nix-installer-action@v20
     - name: Build and check
-      run: nix build .#check
+      run: nix build .#check --option sandbox false
