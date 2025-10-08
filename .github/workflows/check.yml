@@ -14,4 +14,4 @@ jobs:
     - name: set up nixpkgs
       uses: cachix/install-nix-action@v31
     - name: Build and check
-      run: nix build .#check.nix
+      run: nix build .#check
