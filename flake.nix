@@ -101,8 +101,8 @@
 
             export HOME=$(mktemp -d)
             export GRADLE_USER_HOME=$HOME/.gradle
-            ./gradlew clean :noanalyt-runtime-api:createVersionKt --no-daemon
-            ./gradlew test --no-daemon
+            bash gradlew clean :noanalyt-runtime-api:createVersionKt --no-daemon
+            bash gradlew test --no-daemon
 
             mkdir -p $out/bin
 
