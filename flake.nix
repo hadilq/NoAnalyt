@@ -97,10 +97,16 @@
           dontInstall = true;
 
           buildPhase = ''
+            runHook preBuild
+
             export HOME=$(mktemp -d)
             export GRADLE_USER_HOME=$HOME/.gradle
             ./gradlew clean :noanalyt-runtime-api:createVersionKt --no-daemon
             ./gradlew test --no-daemon
+
+            mkdir -p $out/bin
+
+            runHook postBuild
           '';
 
           ANDROID_HOME = "${ciAndroidSdk.androidSdkHome}";
